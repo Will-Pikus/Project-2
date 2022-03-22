@@ -21,15 +21,12 @@ Item.init(
       },
       desc: {
         type: DataTypes.STRING,
-        allowNull: true,
       },
       quality: {
         type: DataTypes.STRING,
-        allowNull: false,
       },
       user_id: {
         type: DataTypes.INTEGER,
-        allowNull: true,
         references: {
             model: 'user',
             key: 'id',

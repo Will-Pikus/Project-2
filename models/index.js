@@ -24,7 +24,7 @@ Community.hasMany(User, {
     foreignKey: 'community_id'
 });
 
-User.belongsTo(User, {
+User.belongsTo(Community, {
     foreignKey: 'community_id'
 });
 
