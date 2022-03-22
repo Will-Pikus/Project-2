@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Lawn Mower",
+        "type": "Good",
+        "desc": "It cuts grass",
+        "quality": "Used",
+        "user_id": 1,
+        "cat_id": 3
+    },
+    {
+        "name": "TV",
+        "type": "Good",
+        "desc": "Watch your shows",
+        "quality": "New",
+        "user_id": 2,
+        "cat_id": 2
+    },
+    {
+        "name": "Microwave",
+        "type": "Good",
+        "desc": "cook",
+        "quality": "Used",
+        "user_id": 3,
+        "cat_id": 1
+    },
+    {
+        "name": "Mow your lawn",
+        "type": "Service",
+        "desc": "I will mow your lawn",
+        "user_id": 1,
+        "cat_id": 3
+    }
+]
+  
