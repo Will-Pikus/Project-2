@@ -20,9 +20,13 @@ Item.belongsTo(Category, {
     foreignKey: 'cat_id'
   });
 
+Community.hasMany(User, {
+    foreignKey: 'community_id'
+});
 
-
-
+User.belongsTo(User, {
+    foreignKey: 'community_id'
+});
 
 
 
