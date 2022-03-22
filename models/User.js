@@ -35,14 +35,6 @@ User.init(
         type: DataTypes.STRING,
         allowNull: true,
       },
-      item_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-            model: 'item',
-            key: 'id',
-          },
-      },
       community_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
