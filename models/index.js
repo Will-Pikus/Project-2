@@ -18,15 +18,15 @@ Category.hasMany(Item, {
 
 Item.belongsTo(Category, {
     foreignKey: 'cat_id'
-  });
-
-Community.hasMany(User, {
-    foreignKey: 'community_id'
 });
 
-User.belongsTo(Community, {
-    foreignKey: 'community_id'
-});
+// Community.hasMany(User, {
+//     foreignKey: 'community_id'
+// });
+
+// User.belongsTo(Community, {
+//     foreignKey: 'community_id'
+// });
 
 
 

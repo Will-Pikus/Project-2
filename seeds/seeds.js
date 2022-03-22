@@ -13,9 +13,10 @@ const seedDatabase = async () => {
     returning: true,
   });
 
- const itemss = await Item.bulkCreate(itemtData);
+ const cats = await Category.bulkCreate(catData);
 
- const catss = await Category.bulkCreate(catData);
+ const items = await Item.bulkCreate(itemtData);
+
 
  process.exit(0);
 };
