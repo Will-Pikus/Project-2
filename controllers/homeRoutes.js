@@ -35,7 +35,7 @@ router.get('/items/:id', async (req, res) => {
 
     const items = itemData.get({ plain: true });
 
-    res.render('project', {
+    res.render('item', {
       ...items,
       logged_in: req.session.logged_in
     });
