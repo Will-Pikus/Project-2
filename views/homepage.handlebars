@@ -1,0 +1,47 @@
+{{!-- HOT BAR --}}
+<div>
+
+</div>
+
+{{!-- FILTERS BAR --}}
+<div>
+
+  {{!-- Range Slider --}}
+  <div>
+
+  </div>
+
+  {{!--Categories Selector  --}} 
+  <div class="custom-select" style="width:200px;">
+    <select>
+        {{#each categories |category|}}
+        <option value={{category.id}}>{{category.name}}</option>
+        {{/each}}
+    </select>
+  </div>
+  
+  {{!-- Community Selector --}}
+  <div class="custom-select" style="width:200px;">
+    <select>
+        {{#each communities |community|}}
+        <option value={{community.id}}>{{community.name}}</option>
+        {{/each}}
+    </select>
+  </div>
+
+</div>
+
+</div>
+
+{{!-- ALL ITEMS BAR --}}
+{{#each items as |item| }}
+<div class="">
+
+  <div class="">
+    <h2><a href="/item/{{item.id}}">{{item.name}}</a></h2>
+    <p>{{item.desc}}</p>
+    <p>Posted by {{item.user.name}}</p>
+  </div>
+
+</div>
+{{/each}}
