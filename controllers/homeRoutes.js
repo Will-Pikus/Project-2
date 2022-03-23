@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const catData = await Category.findAll({
+    const itemData = await Item.findAll({
       include: [
         {
           model: User,
@@ -12,9 +12,9 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-    const categories = catData.map((project) => project.get({ plain: true }));
+    const items = itemData.map((item) => itemData.get({ plain: true }));
     res.render('homepage', { 
-      categories, 
+      items, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -22,9 +22,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/items/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
+    const itemData = await Item.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -33,10 +33,10 @@ router.get('/project/:id', async (req, res) => {
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    const items = itemData.get({ plain: true });
 
     res.render('project', {
-      ...project,
+      ...items,
       logged_in: req.session.logged_in
     });
   } catch (err) {
