@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const projectData = await Project.findAll({
+    const catData = await Category.findAll({
       include: [
         {
           model: User,
@@ -12,9 +12,9 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    const categories = catData.map((project) => project.get({ plain: true }));
     res.render('homepage', { 
-      projects, 
+      categories, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
