@@ -2,17 +2,19 @@ const router = require('express').Router();
 const { Category, Community, Item, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+var randomItem = Item[Math.floor(Math.random(),Item.length)];
+
 router.get('/', async (req, res) => {
   try {
     const itemData = await Item.findAll({
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
-    const items = itemData.map((item) => itemData.get({ plain: true }));
+    const items = itemData.map((itemData) => itemData.get({ plain: true }));
     res.render('homepage', { 
       items, 
       logged_in: req.session.logged_in 
@@ -28,7 +30,7 @@ router.get('/items/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
