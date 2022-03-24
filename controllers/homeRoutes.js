@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Category, Community, Item, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+var randomItem = Item[Math.floor(Math.random(),Item.length)];
+
 router.get('/', async (req, res) => {
   try {
     const itemData = await Item.findAll({
