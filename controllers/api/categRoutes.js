@@ -32,19 +32,36 @@ router.get('/', async (req, res) => {
   });
 
   // GET cats by ID
-  router.get('/:id', (req, res) => {
+  router.get('/:id', async (req, res) => {
     // find one category by its `id` value
     // be sure to include its associated Products
-    Category.findOne({
-      // include: {
-      //   model: Product,
-      // },
-      where: {
-        id: req.params.id,
-      },
-    }).then((catData) => {
-      res.json(catData);
-    });
+    try {
+      const dbCategoryData = await Category.findByPk(req.params.id, {
+        // include: [
+        //   {
+        //     attributes: [
+        //       'name',
+        //     ],
+        //   },
+        // ],
+      });
+      // const category = dbCategoryData.get({ plain: true });
+      // res.render('category', { category, loggedIn: req.session.loggedIn });
+      res.json(dbCategoryData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+    // Category.findOne({
+    //   // include: {
+    //   //   model: Product,
+    //   // },
+    //   where: {
+    //     id: req.params.id,
+    //   },
+    // }).then((catData) => {
+    //   res.json(catData);
+    // });
   });
   
   // save for itemsRoutes
@@ -66,6 +83,16 @@ router.get('/', async (req, res) => {
   //     }
   //   }
   // });
+
+  // CREATE a category
+router.post('/', async (req, res) => {
+  try {
+    const categoryData = await Category.create(req.body);
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
   
   router.get('/login', (req, res) => {
     if (req.session.loggedIn) {

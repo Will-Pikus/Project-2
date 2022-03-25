@@ -3,28 +3,59 @@ const { Community, User } = require('../../models');
 
 // GET all communities
 router.get('/', async (req, res) => {
-  try {
-    const communityData = await Community.findAll();
-    res.status(200).json(communityData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  // If the user is not logged in, redirect the user to the login page
+  // if (!req.session.loggedIn) {
+  //   res.redirect('/login');
+  // } else {
+    // If the user is logged in, allow them to view the category chosen
+    try {
+      const dbCommunityData = await Community.findAll(req.params.id, {
+        // include: [
+        //   {
+        //     model: Item,
+        //     attributes: [
+        //       'name',
+        //       'desc',
+        //       'quality',
+        //     ],
+        //   },
+        // ],
+      });
+      // const category = dbCategoryData.get({ plain: true });
+      // res.render('category', { category, loggedIn: req.session.loggedIn });
+      res.json(dbCommunityData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  // }
 });
+// router.get('/', async (req, res) => {
+//   try {
+//     const communityData = await Community.findAll();
+//     res.status(200).json(communityData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // GET a single community
 router.get('/:id', async (req, res) => {
   try {
-    const communityData = await Community.findByPk(req.params.id, {
-      include: [{ model: Community, through: User, as: 'community_id' }]
+    const dbCommunityData = await Community.findByPk(req.params.id, {
+      // include: [
+      //   {
+      //     attributes: [
+      //       'name',
+      //     ],
+      //   },
+      // ],
     });
-
-    if (!communityData) {
-      res.status(404).json({ message: 'No communities found with this id!' });
-      return;
-    }
-
-    res.status(200).json(communityData);
+    // const category = dbCategoryData.get({ plain: true });
+    // res.render('category', { category, loggedIn: req.session.loggedIn });
+    res.json(dbCommunityData);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -32,9 +63,11 @@ router.get('/:id', async (req, res) => {
 // CREATE a community
 router.post('/', async (req, res) => {
   try {
-    const communityData = await Location.create(req.body);
+    const communityData = await Community.create(req.body);
     res.status(200).json(communityData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
+
+module.exports = router;
