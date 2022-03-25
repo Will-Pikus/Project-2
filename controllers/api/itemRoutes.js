@@ -12,39 +12,19 @@ router.get('/', async (req, res) => {
 });
 
 // Get item by ID - working
-router.get('/:id', (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
-  Item.findOne({
-    include: {
-      model: User,
-    },
-    where: {
-      id: req.params.id,
-    },
-  }).then((catData) => {
-    res.json(catData);
-  });
+router.get('/:id', async (req, res) => {
+  try {
+    const itemData = await Item.findByPk(req.params.id, {
+      include: {
+        model: Category,
+      },
+    });
+    res.json(itemData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
-
-
-// GET a single item
-// router.get('/:id', async (req, res) => {
-//   try {
-//     const itemData = await Item.findOne(req.params.id, {
-//       include: [{ model: User }]
-//     });
-
-//     if (!itemData) {
-//       res.status(404).json({ message: 'No items found with this id!' });
-//       return;
-//     }
-
-//     res.status(200).json(itemData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 // CREATE an item - working
 router.post('/', async (req, res) => {

@@ -70,4 +70,38 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Update community - working
+router.put('/:id', async (req, res) => {
+  try{
+    const commData = await Community.update(req.body,{
+      where: {id: req.params.id}
+    }
+  )
+  res.status(200).json(commData);
+  } catch (err) {
+    res.status(400).json(err)
+  }
+});
+
+
+// DELETE commnity - working 
+router.delete('/:id', async (req, res) => {
+  try {
+    const commData = await Community.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+
+    if (!commData) {
+      res.status(404).json({ message: 'No communities found with this id!' });
+      return;
+    }
+
+    res.status(200).json(commData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
