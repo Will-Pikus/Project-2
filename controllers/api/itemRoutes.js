@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Item, User, Category, Community } = require('../../models');
 
-// GET all items
+// GET all items - working
 router.get('/', async (req, res) => {
   try {
     const itemData = await Item.findAll();
@@ -11,25 +11,22 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET a single item
+// Get item by ID - working
 router.get('/:id', async (req, res) => {
   try {
-    const itemData = await Item.findOne(req.params.id, {
-      include: [{ model: User }]
+    const itemData = await Item.findByPk(req.params.id, {
+      include: {
+        model: Category,
+      },
     });
-
-    if (!itemData) {
-      res.status(404).json({ message: 'No items found with this id!' });
-      return;
-    }
-
-    res.status(200).json(itemData);
+    res.json(itemData);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
-// CREATE an item
+// CREATE an item - working
 router.post('/', async (req, res) => {
   try {
     const itemData = await Item.create(req.body);
@@ -39,7 +36,22 @@ router.post('/', async (req, res) => {
   }
 });
 
-// DELETE an item
+// Update Item
+router.put('/:id', async (req, res) => {
+  // update a category by its `id` value
+  try{
+    const itemData = await Item.update(req.body,{
+      where: {id: req.params.id}
+    }
+  )
+  res.status(200).json(itemData);
+  } catch (err) {
+    res.status(400).json(err)
+  }
+});
+
+
+// DELETE an item - working 
 router.delete('/:id', async (req, res) => {
   try {
     const itemData = await Item.destroy({
