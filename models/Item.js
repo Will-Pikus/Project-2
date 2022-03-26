@@ -15,20 +15,40 @@ Item.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
-      type: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       desc: {
         type: DataTypes.STRING,
       },
       quality: {
         type: DataTypes.STRING,
       },
-      user_id: {
+      transacted: {
+        type: DataTypes.BOOLEAN,
+      },
+      owner_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'user',
+            key: 'id',
+          },
+      },
+      requester_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id',
+          },
+      },
+      image_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'image',
+            key: 'id',
+          },
+      },
+      type_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'type',
             key: 'id',
           },
       },

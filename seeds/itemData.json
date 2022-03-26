@@ -4,7 +4,11 @@
         "type": "Good",
         "desc": "It cuts grass",
         "quality": "Used",
-        "user_id": 1,
+        "transacted": false,
+        "owner_id": 1,
+        "requester_id": 3,
+        "image_id": 1,
+        "type_id": 1,
         "cat_id": 3
     },
     {
@@ -12,7 +16,11 @@
         "type": "Good",
         "desc": "Watch your shows",
         "quality": "New",
-        "user_id": 2,
+        "transacted": false,
+        "owner_id": 2,
+        "requester_id": 1,
+        "image_id": 1,
+        "type_id": 1,
         "cat_id": 2
     },
     {
@@ -20,14 +28,22 @@
         "type": "Good",
         "desc": "cook",
         "quality": "Used",
-        "user_id": 3,
+        "transacted": false,
+        "owner_id": 3,
+        "requester_id": 1,
+        "image_id": 1,
+        "type_id": 1,
         "cat_id": 1
     },
     {
         "name": "Mow your lawn",
         "type": "Service",
         "desc": "I will mow your lawn",
-        "user_id": 1,
+        "transacted": false,
+        "owner_id": 1,
+        "requester_id": 3,
+        "image_id": 1,
+        "type_id": 2,
         "cat_id": 3
     }
 ]
