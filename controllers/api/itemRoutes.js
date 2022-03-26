@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Item, User, Category, Community } = require('../../models');
+const { Item, User, Category, Image, Type } = require('../../models');
 
 // GET all items - working
 router.get('/', async (req, res) => {
@@ -15,9 +15,19 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const itemData = await Item.findByPk(req.params.id, {
-      include: {
-        model: Category,
+      include: [ {
+        model: User,
       },
+      {
+        model: Image,
+      },
+      {
+        model: Type,
+      },
+      {
+        model: Category,
+      }
+    ]
     });
     res.json(itemData);
   } catch (err) {
