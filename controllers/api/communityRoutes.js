@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Community, User } = require('../../models');
 
+var randomCommunity = Community[Math.floor(Math.random(),Community.length)];
+
 // GET all communities
 router.get('/', async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
