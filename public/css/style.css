@@ -29,10 +29,12 @@ body{
     color: var(--jungleGreen);
     font-weight: bold;
     background-color: var(--desertSand);
-    padding-top: .5px;
+    padding-top: .1px;
     padding-bottom: 280px;
-    
+}
 
+.popTitle{
+    font-weight:bold;
 }
 
 .container{
@@ -52,18 +54,24 @@ body{
     background-color: var(--desertSand);
 }
 
-.goodsServices{
-    /* Turns this element into a flexbox */
+/* .goodsServices{
+    /* Turns this element into a flexbox
   display: flex;
-  /* Forces elements to the next line if they don't fit */
+  /* Forces elements to the next line if they don't fit 
   flex-wrap: wrap;
-  margin-top: 2%;
-} 
+  margin-top: 2%; 
+}  */
+
+.row{
+    display: inline-flex;
+    background-color: white;
+    
+}
 
 .card{
     width: 300px;
     /*flex: 0 1 200px; */
-    margin: 30px;
+    margin: 0px;
     
 }
 
