@@ -13,6 +13,11 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
+          as: 'owner'
+        },
+        {
+          model: User,
+          as: 'requester'
         },
       ],
     });
@@ -37,6 +42,11 @@ router.get('/item/:id', async (req, res) => {
       include: [
         {
           model: User,
+          as: 'owner'
+        },
+        {
+          model: User,
+          as: 'requester'
         },
       ],
     });
