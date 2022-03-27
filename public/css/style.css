@@ -25,6 +25,7 @@ body{
 }
 
 
+
 .popGoodsServices{
     color: var(--jungleGreen);
     font-weight: bold;
@@ -83,10 +84,54 @@ body{
     background-color: gray;
 }
 
+.welcome{
+    flex-wrap: wrap;
+    color: var(--jungleGreen);
+    background-color: var(--desertSand);
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
+p{
+    padding: 80px;
+}
+
+.login{
+    color: var(--desertSand);
+    font-weight: bold;
+    background-color: var(--jungleGreen);
+    display:block;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+hr{
+    margin: 40px 0 40px 0;
+    border: 8px solid;
+    background: linear-gradient(to right,var(--desertSand), white);
+}
+
+label{
+    color: var(--desertSand);
+    font-size: medium;
+}
+
+.form-input{
+    color: var(--desertSand);
+}
+
+.logSinBtn{
+    color: var(--jungleGreen);
+    font-weight: bold;
+    background-color: var(--desertSand);
+}
+
+
 .page-footer{
     background-color:#d9c5b2;
     font-weight: bold;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     padding-top: 0;
     width: 100%;
