@@ -6,21 +6,25 @@ const Type = require('./Type');
 const Image = require('./Image')
 
 User.hasMany(Item, {
+    as: 'owner',
   foreignKey: 'owner_id',
   onDelete: 'CASCADE'
 });
 
 Item.belongsTo(User, {
+    as: 'owner',
   foreignKey: 'owner_id'
 });
 
 User.hasMany(Item, {
+    as: 'requester',
     foreignKey: 'requester_id',
     onDelete: 'CASCADE'
 });
 
 // Needs belongs to many
 Item.belongsTo(User, {
+    as : 'requester',
     foreignKey: 'requester_id'
 });
   
