@@ -17,6 +17,11 @@ router.get('/:id', async (req, res) => {
     const itemData = await Item.findByPk(req.params.id, {
       include: [ {
         model: User,
+        as: 'owner'
+      },
+      {
+        model: User,
+        as: 'requester'
       },
       {
         model: Image,
