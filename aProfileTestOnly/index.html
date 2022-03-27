@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo center ">Trade & Barter</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down amber-text text-lighten-4">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav amber-text text-lighten-4" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+
+      <img src="" alt="">
+      
+      <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel gray lighten-5 z-depth-1">
+          <div class="row valign-wrappers ">
+            <div class="col m3 push-m8">
+              <img src="image/andyCopy.jpeg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </div>
+
+            <div class="col m5 pull-m1 aboutDiv"><!-- <div class="col m8 pull-m3 center"> -->
+              <p class="flow-text">
+                Hi, my name is Andy. I've got gadgets and gizmos a-plenty. I've got whozits and whatzits galore. You want thingamabobs? I've got twenty! Let's trade!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="commDiv">
+      <h5 class="commTitle">Communities</h5>
+      <div class="communityBtns">
+        <a class="waves-effect waves-light btn commBtn">La Jolla</a>
+        <a class="waves-effect waves-light btn commBtn">Poway</a>
+        <a class="waves-effect waves-light btn commBtn">Scripps Ranch</a>
+        <a class="waves-effect waves-light btn commBtn">Coronado</a>
+        <a class="waves-effect waves-light btn commBtn">Mira Mesa</a>
+        <a class="waves-effect waves-light btn commBtn">Penasquitos</a>
+        <a class="waves-effect waves-light btn commBtn">Hillcrest</a>
+        <a class="waves-effect waves-light btn commBtn">Encinitas</a>
+        <a class="waves-effect waves-light btn commBtn">El Cajon</a>
+        <a class="waves-effect waves-light btn commBtn">Chula Vista</a>
+        <a class="waves-effect waves-light btn commBtn">Eastlake</a>
+        <a class="waves-effect waves-light btn commBtn">Mission Bay</a>
+      </div>
+    </div>
+
+
+   
+     <div class="invenDiv">
+      <h5>Inventory</h5>
+
+      <!--upload button should only be visible to user of user profile-->
+      <form action="#">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>UPLOAD</span>
+            <input type="file" multiple>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Upload one or more files">
+          </div>
+        </div>
+      </form>
+
+
+      <!--tried to create a modal for trade when clicking on item-->
+      <a class="waves-effect waves-light modal-trigger" href="#modal1"><img src="image/lawnmowerCopy.jpg" width="100px" height="100px"></a>
+      <div>
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <div class="row">
+              <div class="card">
+                <div class="card-image">
+                  <img src="image/lawnmowerCopy.jpg">
+                </div>
+      
+                <div class="card-content">
+                  <p>Red lawnmower</p>
+                  <p>Posted by Andy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Trade</a>
+          </div>
+        </div>
+      </div>
+
+    <script type="text/javascript" src="js/materialize.min.js"></script>     
+</body>
+
+</html>
+<script>
+var elem = document.querySelector('.sidenav');
+var instance = new M.Sidenav(elem);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, options);
+  });
+</script>
