@@ -31,7 +31,7 @@ body{
     font-weight: bold;
     background-color: var(--desertSand);
     padding-top: .1px;
-    padding-bottom: 280px;
+    padding-bottom: 1px;
 }
 
 .popTitle{
@@ -63,16 +63,18 @@ body{
   margin-top: 2%; 
 }  */
 
-.row{
+.gsCards{
     display: inline-flex;
-    background-color: white;
-    
 }
 
+.pgCards{
+    border: 2px solid var(--jungleGreen);
+
+}
 .card{
     width: 300px;
-    /*flex: 0 1 200px; */
-    margin: 0px;
+    /*flex: 0 1 200px;*/
+    margin: 30px;
     
 }
 
@@ -80,9 +82,6 @@ body{
     background-color: #d9c5b2;
 }
 
-.card-content{
-    background-color: gray;
-}
 
 .welcome{
     flex-wrap: wrap;
@@ -93,7 +92,7 @@ body{
     text-align: center;
 }
 
-p{
+.loginBanner{
     padding: 80px;
 }
 

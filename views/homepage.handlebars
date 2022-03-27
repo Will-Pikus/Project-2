@@ -1,7 +1,21 @@
 {{!-- HOT BAR --}}
 <div class=" popGoodsServices">
 <h4 class="popTitle">Popular Goods & Services</h4>
+  {{#each items as |item| }}
+  <div class="row gsCards">
+      <div class="card pgCards">
+        <div class="card-image">
+          <img src="andy.jpeg">
+          <span><a href="/item/{{item.id}}">{{item.name}}</a></span>
+        </div>
 
+        <div class="card-content">
+          <p>{{item.desc}}</p>
+          <p>Posted by {{item.user.name}}</p>
+        </div>
+      </div>
+  </div>
+  {{/each}}
 </div>
 
 {{!-- FILTERS BAR --}}
@@ -38,8 +52,7 @@
 <div class="goodsServices">
   <h4>Goods & Services</h4>
   {{#each items as |item| }}
-  <div class="row">
-    <div class="col s6 push-s5">
+  <div class="row gsCards">
       <div class="card">
         <div class="card-image">
           <img src="andy.jpeg">
@@ -51,7 +64,6 @@
           <p>Posted by {{item.user.name}}</p>
         </div>
       </div>
-    </div>
   </div>
   {{/each}}
 </div>
