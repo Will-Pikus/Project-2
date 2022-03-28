@@ -1,24 +1,18 @@
-<div class="">
+<div class="item-page center">
 
-  <div class="">
-    <h2><a href="/item/{{id}}">{{name}}</a></h2>
-    <h3>{{category.name}}</h3>
-    <p>{{desc}}</p>
-    <p>{{quality}}</p>
-    <p>Posted by {{user.username}}</p>
+  <div class="item-container">
+    <h2>{{name}}</h2>
+    <h3>{{cat_id.name}}</h3>
+    <p class="item-text"><span class="item-det item-text">Description: </span> {{desc}}</p>
+    <p class="item-text"><span class="item-det item-text">Quality: </span>{{quality}}</p>
+    <p class="item-text"><span class="item-det item-text">Posted by: </span>{{owner.username}}</p>
   </div>
 
-<button id="trade-button">Trade</button>
-</div>
-
-<div class="">
-
-  <div class="">
-    <h1>Make An Offer</h1>
-    {{#each images as |image|}}
-     <a href="{{image.path}}"><img src="{{image.path}}"></a>
-    {{/each}}
+  <div>
+    <h4 id="inquire">Send Inquiry</h4>
+    <a id="emailBtn" href="mailto:{{owner.email}}">Send Email</a>
   </div>
 
-<button id="offer-button">Make Offer</button>
 </div>
+
+<script src="./js/item.js"></script>
