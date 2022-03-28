@@ -1,55 +1,88 @@
 {{!-- PROFILE HEADER --}}
 <div class="col s12 m8 offset-m2 l6 offset-l3">
-    <div class="card-panel grey lighten-5 z-depth-1">
-        <div class="row valign-wrapper">
-            <div class="col s2">
-              <img src="andy.jpeg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+        <div class="card-panel gray lighten-5 z-depth-1">
+          <div class="row valign-wrappers ">
+            <div class="col m3 push-m8">
+              <img src="images/andy.jpeg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
             </div>
-            <div class="col s10">
-              <span class="black-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
-              </span>
+
+            <div class="col m5 pull-m1 aboutDiv"><!-- <div class="col m8 pull-m3 center"> -->
+              <p class="flow-text">
+                Hi, my name is Andy. I've got gadgets and gizmos a-plenty. I've got whozits and whatzits galore. You want thingamabobs? I've got twenty! Let's trade!
+              </p>
             </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
 {{!-- COMMUNITIES BAR --}}
-<div>
-<h5>Communities</h5>
-    <div class="carousel">
-        <a class="carousel-item waves-effect waves-light btn">La Jolla</a>
-        <a class="carousel-item waves-effect waves-light btn">Poway</a>
-        <a class="carousel-item waves-effect waves-light btn">Scripps Ranch</a>
-        <a class="carousel-item waves-effect waves-light btn">Coronado</a>
-        <a class="carousel-item waves-effect waves-light btn">Mira Mesa</a>
-        <a class="carousel-item waves-effect waves-light btn">Penasquitos</a>
-        <a class="carousel-item waves-effect waves-light btn">Hillcrest</a>
-        <a class="carousel-item waves-effect waves-light btn">Encinitas</a>
-        <a class="carousel-item waves-effect waves-light btn">El Cajon</a>
-        <a class="carousel-item waves-effect waves-light btn">Chula Vista</a><div>
-    </div>
-</div>
+{{!-- <div class="commDiv">
+    <h5 class="commTitle">Communities</h5>
+      <div class="communityBtns">
+        <a class="waves-effect waves-light btn commBtn">La Jolla</a>
+        <a class="waves-effect waves-light btn commBtn">Poway</a>
+        <a class="waves-effect waves-light btn commBtn">Scripps Ranch</a>
+        <a class="waves-effect waves-light btn commBtn">Coronado</a>
+        <a class="waves-effect waves-light btn commBtn">Mira Mesa</a>
+        <a class="waves-effect waves-light btn commBtn">Penasquitos</a>
+        <a class="waves-effect waves-light btn commBtn">Hillcrest</a>
+        <a class="waves-effect waves-light btn commBtn">Encinitas</a>
+        <a class="waves-effect waves-light btn commBtn">El Cajon</a>
+        <a class="waves-effect waves-light btn commBtn">Chula Vista</a>
+        <a class="waves-effect waves-light btn commBtn">Eastlake</a>
+        <a class="waves-effect waves-light btn commBtn">Mission Bay</a>
+      </div>
+</div> --}}
 
 {{!-- USER INVENTORY --}}
-<div>
-<h5>Inventory</h5>
 
+<div class="invenDiv">
+      <h5>Inventory</h5>
+
+      <!--upload button should only be visible to user of user profile-->
+      <form action="#">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>UPLOAD</span>
+            <input type="file" multiple>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Upload one or more files">
+          </div>
+        </div>
+      </form>
+
+<div>
+  {{#each items as |item| }}
+  <div class="row gsCards">
+      <div class="card pgCards">
+        <div class="card-image">
+          <img src="andy.jpeg">
+          <span><a href="/item/{{item.id}}">{{item.name}}</a></span>
+        </div>
+
+        <div class="card-content">
+          <p>{{item.desc}}</p>
+          <p>Posted by {{item.user.name}}</p>
+        </div>
+      </div>
+  </div>
+  {{/each}}
+    {{!-- {{#each users as |user| }}
+    <div class="row gsCards">
+      <div class="card">
+        <div class="card-image">
+          <img src="/images">
+          <span><a href="/item/{{user.id}}">{{user.username}}</a></span>
+        </div>
+
+        <div class="card-content">
+          <p>{{user.username}}</p>
+          <p>Posted by {{user.username}}</p>
+        </div>
+      </div>
+    </div>
+    {{/each}} --}}
 </div>
 
-<script type="text/javascript" src="js/materialize.min.js"></script>
-
-<!--for carousel in Communities-->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-	var elems = document.querySelectorAll('.carousel');
-	var instances = M.Carousel.init(elems, options);
-
-});
-	
-$(document).ready(function(){
-    $('.carousel').carousel({
-      noWrap: false
-    });
-});
-</script>
+</div>

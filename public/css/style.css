@@ -126,7 +126,47 @@ label{
     background-color: var(--desertSand);
 }
 
+.card-panel{
+    background: #d9c5b2;
+    margin-top: 3px;
+    /* padding-bottom: 0; */
+}
 
+
+.circle{
+    border: 3px solid #145250;
+    margin-top: 20px;
+}
+
+.aboutDiv{
+    margin-top: 63px;
+}
+
+.flow-text{
+    color:#145250;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.communityBtns{
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.commBtn{
+    margin: 8px;
+}
+.commDiv{
+    margin: 30px;
+}
+h5{
+    color:#d9c5b2;
+    font-weight: bold;
+}
+
+.invenDiv{
+    margin: 30px;
+}
 
 .page-footer{
     background-color:#d9c5b2;
