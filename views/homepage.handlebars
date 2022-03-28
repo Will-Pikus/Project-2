@@ -11,7 +11,7 @@
 
         <div class="card-content">
           <p>{{item.desc}}</p>
-          <p>Posted by {{item.user.name}}</p>
+          <p>Posted by {{item.owner.username}}</p>
         </div>
       </div>
   </div>
@@ -23,8 +23,8 @@
 <h4>Filters</h4>
   {{!-- Range Slider --}}
   <div class="filterBtn">
-    <a class="waves-effect waves-light btn ">Categories</a>
-    <a class="waves-effect waves-light btn">Communities</a>
+    <a class="waves-effect waves-light btn filtersBtn">Categories</a>
+    <a class="waves-effect waves-light btn filtersBtn">Communities</a>
   </div>
 
   {{!--Categories Selector  --}} 
@@ -61,7 +61,7 @@
 
         <div class="card-content">
           <p>{{item.desc}}</p>
-          <p>Posted by {{item.user.name}}</p>
+          <p>Posted by {{item.owner.username}}</p>
         </div>
       </div>
   </div>
