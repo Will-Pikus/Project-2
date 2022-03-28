@@ -14,6 +14,7 @@
 nav{
     color: var(--desertSand);
     background: var(--jungleGreen);
+    font-weight: bold;
 }
 
 .nav-wrapper{
@@ -36,6 +37,9 @@ body{
     border-bottom: solid 10px rgb(218, 215, 215);
 }
 
+.gsHead{
+    font-weight: bold;
+}
 .popTitle{
     font-weight:bold;
 }
@@ -46,16 +50,19 @@ body{
 }
 
 .filters{
-    color: var(--jungleGreen);
+    color: rgb(233, 233, 233);
+    background-color: var(--jungleGreen);
     font-weight: bold;
     margin-top: 30px;
-    padding-left: 25px;
+    padding-left: 50px;
+    padding-top: 1px;
+    padding-bottom: 25px;
 
 }
 
 .filtersBtn{
-    color: var(--desertSand);
-    background-color: var(--jungleGreen);
+    color: var(--jungleGreen);
+    background-color:rgb(233, 233, 233);
 }
 
 /* .goodsServices{
