@@ -123,6 +123,20 @@ body{
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.logSign{
+    margin: 10%;
+    padding-top: 5%;
+}
+
+#signTitle{
+    padding-top: 0;
+}
+
+.form{
+    margin: 10%;
+}
+
 hr{
     margin: 40px 0 40px 0;
     border: 8px solid;

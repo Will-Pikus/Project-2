@@ -16,7 +16,7 @@
       <nav>
         <div class="nav-wrapper">
           <a href="/" class="brand-logo center">TradeUp</a>
-          <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
             <li><a href="/profile">Profile</a></li>
@@ -55,6 +55,19 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
+</script>
+  {{!-- <script>
+    $(document).ready(function (e) {
+      alert("jquery load");
+      debugger;
+      $('.dropdown-trigger').dropdown();
+    });
+  </script> --}}
 </body>
 </html>
 
