@@ -40,6 +40,7 @@ body{
 .gsHead{
     font-weight: bold;
 }
+
 .popTitle{
     font-weight:bold;
 }
@@ -242,4 +243,9 @@ h5{
     width: 60%;
     padding-top: 25px;
     margin-top: 50px;
+}
+
+#profile-main{
+    padding-left: 25px;
+    padding-right: 50%;
 }

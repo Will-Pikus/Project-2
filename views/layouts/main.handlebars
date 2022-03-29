@@ -71,6 +71,13 @@
     var instances = M.Sidenav.init(elems, options);
   });
 </script>
+  {{!-- <script>
+    $(document).ready(function (e) {
+      alert("jquery load");
+      debugger;
+      $('.dropdown-trigger').dropdown();
+    });
+  </script> --}}
 </body>
 </html>
 {{!-- <script>
@@ -80,6 +87,9 @@
   });
 </script> --}}
 
+<script>
+  var elem = document.querySelector('.sidenav'); 
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

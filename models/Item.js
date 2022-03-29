@@ -23,6 +23,7 @@ Item.init(
       },
       transacted: {
         type: DataTypes.BOOLEAN,
+        defaultValue: false,
       },
       owner_id: {
         type: DataTypes.INTEGER,
