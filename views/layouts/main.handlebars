@@ -26,16 +26,6 @@
       </nav>
       </div>
       
-      
-
-        <!-- Conditionally render login or logout links -->
-        {{!-- {{#if logged_in}}
-        <a href="/profile">profile</a>
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login"></a>
-        {{/if}} --}}
-
       <ul class="sidenav" id="mobile-demo">
         <li><a href="/">Home</a></li>
         <li><a href="/profile">Profile</a></li>
@@ -65,6 +55,7 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 
+<<<<<<< HEAD
 <script>
  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
@@ -78,14 +69,10 @@
       $('.dropdown-trigger').dropdown();
     });
   </script> --}}
+=======
+>>>>>>> b4b4977d06a7f522a99a434da56467688ca7e895
 </body>
 </html>
-{{!-- <script>
- //document.addEventListener('DOMContentLoaded', function() {
- //   var elems = document.querySelectorAll('.dropdown-trigger');
-  //  var instances = M.Dropdown.init(elems, options);
-  });
-</script> --}}
 
 <script>
   var elem = document.querySelector('.sidenav'); 

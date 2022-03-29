@@ -78,10 +78,10 @@ body{
     display: inline-flex;
 }
 
-.pgCards{
+/* .pgCards{
     border: 2px solid var(--jungleGreen);
 
-}
+} */
 .card{
     width: 300px;
     /*flex: 0 1 200px;*/
@@ -94,7 +94,7 @@ body{
 }
 
 .card-image{
-    background-color: #d9c5b2;
+    background-color: rgb(153, 152, 152);
 }
 
 .goodsServices{
@@ -203,11 +203,10 @@ h5{
 .page-footer{
     background-color:var(--desertSand);
     font-weight: bold;
-    position: fixed;
     bottom: 0;
     padding-top: 0;
     width: 100%;
-    /* position: absolute; */
+    position: fixed;
     height: 2.5rem;
 }
 
@@ -248,4 +247,13 @@ h5{
 #profile-main{
     padding-left: 25px;
     padding-right: 50%;
+}
+
+#card-title{
+    text-align: center;
+    padding: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+    color: var(--jungleGreen);
 }

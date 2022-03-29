@@ -1,13 +1,13 @@
 {{!-- HOT BAR --}}
-<div class=" popGoodsServices">
+<div class="popGoodsServices">
 <h4 class="popTitle">Popular Goods & Services</h4>
 {{!-- 1 --}}
   {{#each items as |item|}}
   <div class="row gsCards">
       <div class="card pgCards">
         <div class="card-image">
-          <img src="./images/andy.jpeg">
-          <span><a href="/item/{{item.id}}">{{item.name}}</a></span>
+          <img src="https://www.thepuffpack.com/wp-content/uploads/2020/10/mysteryitem.jpg">
+          <span><a id="card-title" href="/item/{{item.id}}">{{item.name}}</a></span>
         </div>
 
         <div class="card-content">
@@ -87,37 +87,17 @@
     <a class="waves-effect waves-light btn filtersBtn">Categories</a>
     <a class="waves-effect waves-light btn filtersBtn">Communities</a>
   </div>
-
-  {{!--Categories Selector  --}} 
-  {{!-- <div class="custom-select" style="width:200px;">
-    <select>
-        {{#each categories |category|}}
-        <option value={{category.id}}>{{category.name}}</option>
-        {{/each}}
-    </select>
-  </div>--}}
-
-  {{!-- Community Selector --}}
-  {{!--<div class="custom-select" style="width:200px;">
-    <select>
-        {{#each communities |community|}}
-        <option value={{community.id}}>{{community.name}}</option>
-        {{/each}}
-    </select>
-  </div> --}}
 </div>
 
-
-
 {{!-- ALL ITEMS BAR --}}
-<div class="goodsServices">
+<div onclick= location='./item/{{item.id}}' class="goodsServices">
   <h4 class="gsHead">Goods & Services</h4>
   {{#each items as |item| }}
   <div class="row gsCards">
       <div class="card">
         <div class="card-image">
           <img src="andy.jpeg">
-          <span><a href="/item/{{item.id}}">{{item.name}}</a></span>
+          <span class="center"><a id="card-title" href="/item/{{item.id}}">{{item.name}}</a></span>
         </div>
 
         <div class="card-content">
