@@ -4,14 +4,16 @@
   {{#each items as |item| }}
   <div class="row gsCards">
       <div class="card pgCards">
-        <div class="card-image">
-          <img src="https://www.thepuffpack.com/wp-content/uploads/2020/10/mysteryitem.jpg">
-          <span><a id="card-title" href="/item/{{item.id}}">{{item.name}}</a></span>
-        </div>
+        <a href="/item/{{item.id}}">
+          <div class="card-image">
+            <img src="https://www.thepuffpack.com/wp-content/uploads/2020/10/mysteryitem.jpg">
+            <span><a id="card-title" href="/item/{{item.id}}">{{item.name}}</a></span>
+          </div>
+        </a>
 
         <div class="card-content">
           <p>{{item.desc}}</p>
-          <p>Posted by {{item.owner.username}}</p>
+          <p>Posted by <a href="/user/{{item.owner.id}}">{{item.owner.username}}</a></p>
         </div>
       </div>
   </div>
@@ -34,10 +36,12 @@
   {{#each items as |item| }}
   <div class="row gsCards">
       <div class="card">
-        <div class="card-image">
-          <img src="andy.jpeg">
-          <span class="center"><a id="card-title" href="/item/{{item.id}}">{{item.name}}</a></span>
-        </div>
+        <a href="/item/{{item.id}}">
+          <div class="card-image">
+            <img src="https://www.thepuffpack.com/wp-content/uploads/2020/10/mysteryitem.jpg">
+            <span class="center"><a id="card-title" href="/item/{{item.id}}">{{item.name}}</a></span>
+          </div>
+        </a>
 
         <div class="card-content">
           <p>{{item.desc}}</p>

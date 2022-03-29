@@ -44,7 +44,11 @@ router.get('/:id', async (req, res) => {
 // CREATE an item - working
 router.post('/', async (req, res) => {
   try {
-    const itemData = await Item.create(req.body);
+    const itemData = await Item.create({
+      ...req.body,
+      owner_id: req.session.user_id,
+    });
+
     res.status(200).json(itemData);
   } catch (err) {
     res.status(400).json(err);

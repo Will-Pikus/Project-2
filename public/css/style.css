@@ -194,6 +194,7 @@ h5{
     width: 100%;
     position: fixed;
     height: 2.5rem;
+    margin-top: 35px;
 }
 
 .item-page{
@@ -242,4 +243,9 @@ h5{
     font-weight: bold;
     width: 100%;
     color: var(--jungleGreen);
+}
+
+.padding-l{
+    padding-left: 25px;
+    padding-bottom: 75px;
 }

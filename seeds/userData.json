@@ -8,12 +8,15 @@
     {
       "username": "Lernantino",
       "email": "lernantino@gmail.com",
-      "password": "password12345"
+      "password": "password12345",
+      "about": "My name is lernantino, I got a bunch of stuff that you want"
     },
     {
       "username": "Amiko",
       "email": "amiko2k20@aol.com",
-      "password": "password12345"
+      "password": "password12345",
+      "about": "I like thrifting and find lots of cool stuff"
+      
     }
   ]
   
