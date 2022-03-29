@@ -123,6 +123,19 @@ body{
     margin-right: 10%;
 }
 
+.logSign{
+    margin: 10%;
+    padding-top: 5%;
+}
+
+#signTitle{
+    padding-top: 0;
+}
+
+.form{
+    margin: 10%;
+}
+
 hr{
     margin: 40px 0 40px 0;
     border: 8px solid;
@@ -189,11 +202,11 @@ h5{
 .page-footer{
     background-color:var(--desertSand);
     font-weight: bold;
-    /* position: fixed; */
+    position: fixed;
     bottom: 0;
     padding-top: 0;
     width: 100%;
-    position: absolute;
+    /* position: absolute; */
     height: 2.5rem;
 }
 
