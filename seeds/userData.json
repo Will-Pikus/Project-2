@@ -17,6 +17,14 @@
       "password": "password12345",
       "about": "I like thrifting and find lots of cool stuff"
       
+    },
+    {
+      "username": "Andy",
+      "email": "andy@aol.com",
+      "password": "password12345",
+      "about": "Hi, my name is Andy. I've got gadgets and gizmos a-plenty. I've got whozits and whatzits galore. You want thingamabobs? I've got twenty! Let's trade!"
+      
     }
+
   ]
   
