@@ -1,88 +1,50 @@
 {{!-- PROFILE HEADER --}}
 <div class="col s12 m8 offset-m2 l6 offset-l3">
-        <div class="card-panel gray lighten-5 z-depth-1">
-          <div class="row valign-wrappers ">
-            <div class="col m3 push-m8">
-              <img src="images/andy.jpeg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-            </div>
-
-            <div class="col m5 pull-m1 aboutDiv"><!-- <div class="col m8 pull-m3 center"> -->
-              <p class="flow-text">
-                Hi, my name is Andy. I've got gadgets and gizmos a-plenty. I've got whozits and whatzits galore. You want thingamabobs? I've got twenty! Let's trade!
-              </p>
-            </div>
-          </div>
-        </div>
+  <div class="card-panel gray lighten-5 z-depth-1">
+    <div class="row valign-wrappers ">
+      <div class="col m3 push-m8">
+        <img src="images/andy.jpeg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
       </div>
 
-{{!-- COMMUNITIES BAR --}}
-{{!-- <div class="commDiv">
-    <h5 class="commTitle">Communities</h5>
-      <div class="communityBtns">
-        <a class="waves-effect waves-light btn commBtn">La Jolla</a>
-        <a class="waves-effect waves-light btn commBtn">Poway</a>
-        <a class="waves-effect waves-light btn commBtn">Scripps Ranch</a>
-        <a class="waves-effect waves-light btn commBtn">Coronado</a>
-        <a class="waves-effect waves-light btn commBtn">Mira Mesa</a>
-        <a class="waves-effect waves-light btn commBtn">Penasquitos</a>
-        <a class="waves-effect waves-light btn commBtn">Hillcrest</a>
-        <a class="waves-effect waves-light btn commBtn">Encinitas</a>
-        <a class="waves-effect waves-light btn commBtn">El Cajon</a>
-        <a class="waves-effect waves-light btn commBtn">Chula Vista</a>
-        <a class="waves-effect waves-light btn commBtn">Eastlake</a>
-        <a class="waves-effect waves-light btn commBtn">Mission Bay</a>
-      </div>
-</div> --}}
-
-{{!-- USER INVENTORY --}}
-
-<div class="invenDiv">
-      <h5>Inventory</h5>
-
-      <!--upload button should only be visible to user of user profile-->
-      <form action="#">
-        <div class="file-field input-field">
-          <div class="btn">
-            <span>UPLOAD</span>
-            <input type="file" multiple>
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" placeholder="Upload one or more files">
-          </div>
-        </div>
-      </form>
-
-<div>
-  {{#each items as |item| }}
-  <div class="row gsCards">
-      <div class="card pgCards">
-        <div class="card-image">
-          <img src="andy.jpeg">
-          <span><a href="/item/{{item.id}}">{{item.name}}</a></span>
-        </div>
-
-        <div class="card-content">
-          <p>{{item.desc}}</p>
-          <p>Posted by {{item.user.name}}</p>
-        </div>
-      </div>
-  </div>
-  {{/each}}
-    {{!-- {{#each users as |user| }}
-    <div class="row gsCards">
-      <div class="card">
-        <div class="card-image">
-          <img src="/images">
-          <span><a href="/item/{{user.id}}">{{user.username}}</a></span>
-        </div>
-
-        <div class="card-content">
-          <p>{{user.username}}</p>
-          <p>Posted by {{user.username}}</p>
-        </div>
+      <div class="col m5 pull-m1 aboutDiv"><!-- <div class="col m8 pull-m3 center"> -->
+        <p class="flow-text">
+          Hi, my name is Andy. I've got gadgets and gizmos a-plenty. I've got whozits and whatzits galore. You want thingamabobs? I've got twenty! Let's trade!
+        </p>
       </div>
     </div>
-    {{/each}} --}}
+  </div>
 </div>
 
+<div id="profile-main">
+  <form class="new-project-form">
+    <div>
+      <h4> Upload Item</h4>
+      <input id="item-title" type="text" placeholder="Title">
+      <input id="item-desc" type="text" placeholder="Description">
+      <input id="item-qual" type="text" placeholder="Quality">
+      <button class="waves-effect waves-light btn" type="submit" id="create-item-btn">Upload</button>
+    </div>
+  </form>
+
+  <h4>Inventory</h4>
+
+  <div>
+    {{#each users as |user| }}
+    <div class="row gsCards">
+        <div class="card pgCards">
+          <div class="card-image">
+            <img src="andy.jpeg">
+            <span><a href="/item/{{user}}"></a></span>
+          </div>
+
+          <div class="card-content">
+            <p>{{item.desc}}</p>
+            <p>Posted by {{item.user.name}}</p>
+          </div>
+        </div>
+    </div>
+    {{/each}}
+  </div>
 </div>
+
+<script src="./js/profile.js"></script>
