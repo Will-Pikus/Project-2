@@ -17,9 +17,6 @@ router.get('/:id', async (req, res) => {
     const userData = await User.findByPk(req.params.id, {
       include: [{
         model: Community,
-      },
-      {
-        model: Item,
       }
     ]
     });
