@@ -3,14 +3,12 @@ const createItem = async (event) => {
   const name = document.querySelector('#item-title').value.trim();
   const desc = document.querySelector('#item-desc').value.trim();
   const quality = document.querySelector('#item-qual').value.trim();
-  // const owner_id = req.session.user_id
 
-  // const description = document.querySelector('#project-desc').value.trim();
 
   if (name && desc) {
     const response = await fetch(`/api/items`, {
       method: 'POST',
-      body: JSON.stringify({ name, desc, quality}),
+      body: JSON.stringify({ name, desc, quality }),
       headers: {
         'Content-Type': 'application/json',
       },
