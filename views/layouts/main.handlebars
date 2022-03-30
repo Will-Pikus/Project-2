@@ -18,9 +18,16 @@
           <a href="/" class="brand-logo center">TradeUp</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
+            {{#if logged_in}}
+            <li><a href="/">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            {{!-- <li><a href="/logout" id="logout">Logout</a></li> --}}
+            <button class="login" id="logout">Logout</button>
+            {{else}}
             <li><a href="/">Home</a></li>
             <li><a href="/profile">Profile</a></li>
             <li><a href="/login">Login</a></li>
+            {{/if}}
           </ul>
         </div>
       </nav>
@@ -72,7 +79,8 @@
 </html>
 
 <script>
-  var elem = document.querySelector('.sidenav'); 
+  var elems = document.querySelector('.sidenav'); 
+  var options = document.querySelector('#logout')
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
